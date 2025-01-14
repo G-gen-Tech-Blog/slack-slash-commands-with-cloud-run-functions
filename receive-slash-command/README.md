@@ -57,7 +57,7 @@ curl localhost:8080 \
 &trigger_id=13345224609.738474920.8088930838d88f008e0\
 &api_app_id=A123456\
 &command=/backend-sample\
-&text=this-is-parameter
+&text=this-is-parameter\
 &test_mode=True
 "
 ```

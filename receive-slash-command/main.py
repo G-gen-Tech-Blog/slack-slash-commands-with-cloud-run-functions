@@ -49,14 +49,17 @@ def main(request):
 
     try :
         verify_signature(request)
-    except Exception as e:
+    except ValueError:
         # リクエストに test_mode 要素が含まれていたらスキップ
         if "test_mode" in request.form:
             logger.info("テストモードで実行")
             pass
         else:
-            logger.exception(e)  
-            return f"Authentication failed", 403
+            logger.exception("401 Unauthorized")
+            return f"401 Unauthorized", 401
+    except Exception as e:
+        logger.exception(e)
+        return f"500 Internal Server Error", 500
 
     # Slack からのリクエストを辞書型変数と JSON に格納
     body_dict = request.form.to_dict(flat=True)
