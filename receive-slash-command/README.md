@@ -15,7 +15,8 @@ gcloud functions deploy ${function} \
 --project=${PROJECT_ID} \
 --region=asia-northeast1 \
 --runtime=python312 \
---memory=256Mi \
+--memory=128Mi \
+--cpu=.333 \
 --entry-point=main \
 --trigger-http \
 --allow-unauthenticated \
