@@ -89,6 +89,6 @@ def main(request):
         return f":bomb: 予期せぬエラーが発生しました。エラーメッセージ : {e}", 200
 
     # Slack に返答を返す
-    return_messaage = f"処理を受け付けました。少々お待ち下さい。\n実行されたコマンド: {body_dict["command"]} {body_dict["text"]}"
-    
+    return_messaage = f"""処理を受け付けました。少々お待ち下さい。\n実行されたコマンド: {body_dict["command"]} {body_dict["text"]}"""
+
     return return_messaage, 200
