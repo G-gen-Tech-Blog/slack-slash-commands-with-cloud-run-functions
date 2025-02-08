@@ -5,6 +5,10 @@
 記事 URL :
 https://blog.g-gen.co.jp/entry/slack-slash-commands-with-cloud-run-functions
 
+# Python のバージョン
+
+当ソースコードは Python 3.12.3 を用いて開発されました。
+
 # 免責事項 
 
 当レポジトリおよび上記記事で紹介するプログラムのソースコードは、ご自身の責任のもと、使用、引用、改変、再配布して構いません。
