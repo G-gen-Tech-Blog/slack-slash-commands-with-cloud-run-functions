@@ -51,12 +51,8 @@ def main(request):
         verify_signature(request)
     except ValueError:
         # リクエストに test_mode 要素が含まれていたらスキップ
-        if "test_mode" in request.form:
-            logger.info("テストモードで実行")
-            pass
-        else:
-            logger.exception("401 Unauthorized")
-            return f"401 Unauthorized", 401
+        logger.exception("401 Unauthorized")
+        return f"401 Unauthorized", 401
     except Exception as e:
         logger.exception(e)
         return f"500 Internal Server Error", 500
